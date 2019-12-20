@@ -1,6 +1,6 @@
 package com.vladimir.gamesapp.Api;
 
-public class Const {
+public class ApiConst {
 
     //Api constants
 

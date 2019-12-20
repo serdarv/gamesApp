@@ -19,14 +19,14 @@ public class BaseApi {
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request().newBuilder()
                         .addHeader("Accept", "application/json")
-                        .addHeader("user-key", Const.API_KEY)
+                        .addHeader("user-key", ApiConst.API_KEY)
                         .build();
                 return chain.proceed(request);
             }
         });
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Const.BASE_API)
+                .baseUrl(ApiConst.BASE_API)
                 .client(httpClient.build())
                 .build();
 

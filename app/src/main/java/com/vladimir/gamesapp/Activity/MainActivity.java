@@ -4,20 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.vladimir.gamesapp.Api.BaseApi;
+import com.vladimir.gamesapp.Database.DBUser;
 import com.vladimir.gamesapp.Model.LoginUserModel;
 import com.vladimir.gamesapp.R;
 import com.vladimir.gamesapp.Utils.FlowController;
+import com.vladimir.gamesapp.Utils.SharedPreferencesUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     //Private variables
 
     private LoginUserModel loginUserModel;
+    private DBUser userDB;
+
+    //DB initialization
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,22 +39,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        userDB = new DBUser(this);
         initVariables();
 
         if (isUserLoggedIn()) {
-
-        } else {
-
+            FlowController.loginRedirect(this,HomeActivity.class);
         }
     }
 
     //Methods
 
     private boolean isUserLoggedIn() {
-
-        //TODO - check if user is logged in than change root activity
-
-        return true;
+        if(SharedPreferencesUtils.getUser(getApplicationContext()) != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private void initVariables() {
@@ -63,13 +64,18 @@ public class MainActivity extends AppCompatActivity {
     //ButterKnife OnClick bindings
 
     @OnClick(R.id.login_btn) void login(){
-        //TODO - after creating database check if email and password exist in database,than login
 
-        FlowController.loginRedirect(this,HomeActivity.class);
+        LoginUserModel loginUserModel = new LoginUserModel(email.getText().toString(),password.getText().toString());
+        if (userDB.loginUser(loginUserModel)){
+            FlowController.loginRedirect(this,HomeActivity.class);
+        } else {
+            Toast.makeText(getApplicationContext(),"Wrong email or password",Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @OnClick(R.id.not_registered_tv) void register() {
-        FlowController.registerRedirect(this,RegistrationActivity.class);
+        FlowController.showRegister(this,RegistrationActivity.class);
     }
 
     //TODO - implement fragments,SQLite database,registration

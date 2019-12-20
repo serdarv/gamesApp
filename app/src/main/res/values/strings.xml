@@ -6,6 +6,27 @@
     <string name="password_hint">*******</string>
     <string name="login">Login</string>
     <string name="not_registered">Not registered yet? Click here to register!</string>
+    <string name="logout">Logout</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="age">Age</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="register">Register</string>
+    <string name="first_name_hint">John</string>
+    <string name="last_name_hint">Doe</string>
+    <string name="age_hint">25</string>
+    <string name="error_string">This field cannot be empty!</string>
+    <string name="email_error">Email not valid!</string>
+    <string name="diff_passwords">Passwords do not match!</string>
+    <string name="user_created">User successfully created</string>
+    <string name="db_error">Could not insert into db. Please try again!</string>
+
+
+
+
+
+
+
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
