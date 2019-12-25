@@ -53,7 +53,7 @@ public class DBUser {
                 DBConst.USER_COLUMN_AGE
         };
 
-        // Filter results WHERE "title" = 'My Title'
+        // Filter results WHERE
         String selection = DBConst.USER_COLUMN_EMAIL + " = ? and " + DBConst.USER_COLUMN_PASSWORD + " = ?";
         String[] selectionArgs = { loginUserModel.getEmail(),loginUserModel.getPassword()};
 

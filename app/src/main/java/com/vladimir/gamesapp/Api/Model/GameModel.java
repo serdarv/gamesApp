@@ -1,21 +1,34 @@
 package com.vladimir.gamesapp.Api.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class GameModel {
 
-    private int id;
-    private String name,storyline,summary,url;
-    private int screenshots;
+    transient private int id;
+    @SerializedName("name")
+    private String name;
+    @SerializedName("storyline")
+    private String storyline;
+    @SerializedName("summary")
+    private String summary;
+    @SerializedName("url")
+    private String url;
+    @SerializedName("id")
+    private int game_id;
+
+    private String selectionType;
 
     public GameModel() {
     }
 
-    public GameModel(int id, String name, String storyline, String summary, String url, int screenshots) {
+    public GameModel(int id, String name, String storyline, String summary, String url, int game_id, String selectionType) {
         this.id = id;
         this.name = name;
         this.storyline = storyline;
         this.summary = summary;
         this.url = url;
-        this.screenshots = screenshots;
+        this.game_id = game_id;
+        this.selectionType = selectionType;
     }
 
     public int getId() {
@@ -58,11 +71,19 @@ public class GameModel {
         this.url = url;
     }
 
-    public int getScreenshots() {
-        return screenshots;
+    public String getSelectionType() {
+        return selectionType;
     }
 
-    public void setScreenshots(int screenshots) {
-        this.screenshots = screenshots;
+    public void setSelectionType(String selectionType) {
+        this.selectionType = selectionType;
+    }
+
+    public int getGame_id() {
+        return game_id;
+    }
+
+    public void setGame_id(int game_id) {
+        this.game_id = game_id;
     }
 }

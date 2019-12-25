@@ -7,6 +7,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BaseApi {
 
@@ -20,6 +21,7 @@ public class BaseApi {
                 Request request = chain.request().newBuilder()
                         .addHeader("Accept", "application/json")
                         .addHeader("user-key", ApiConst.API_KEY)
+
                         .build();
                 return chain.proceed(request);
             }
@@ -28,6 +30,7 @@ public class BaseApi {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ApiConst.BASE_API)
                 .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         return retrofit.create(ApiService.class);

@@ -20,11 +20,16 @@
     <string name="diff_passwords">Passwords do not match!</string>
     <string name="user_created">User successfully created</string>
     <string name="db_error">Could not insert into db. Please try again!</string>
-
-
-
-
-
+    <string name="search_hint">Example: Assassins</string>
+    <string name="favourites">Favourites</string>
+    <string name="search">Search</string>
+    <string name="played">Played</string>
+    <string name="toPlay">To play</string>
+    <string name="storyline">Storyline</string>
+    <string name="summary">Summary</string>
+    <string name="remove_fav">Game removed from favorites</string>
+    <string name="add_to_played">Game added to played games</string>
+    <string name="game_added">Game successfully added</string>
 
 
     <string name="title_activity_home">HomeActivity</string>

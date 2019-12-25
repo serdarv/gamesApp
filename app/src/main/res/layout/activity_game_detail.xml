@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/body_margins"
+    tools:context=".Activity.GameDetailActivity"
+    android:weightSum="20">
+
+    <ImageView
+        android:id="@+id/game_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        />
+
+    <TextView
+        android:id="@+id/game_url_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="2"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/summary"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+
+        >
+        <TextView
+            android:id="@+id/game_summary_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/storyline"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:id="@+id/game_storyline_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+
+        <Button
+            android:id="@+id/favourites_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/emptystar"
+            android:textSize="8sp"
+            android:text="@string/favourites"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/played_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/played"
+            android:textSize="8sp"
+            android:drawableStart="@drawable/played"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/toPlay_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toPlay"
+            android:textSize="8sp"
+            android:drawableStart="@drawable/toplay"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

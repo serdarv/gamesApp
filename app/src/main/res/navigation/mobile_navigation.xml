@@ -3,41 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_favourites">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.vladimir.gamesapp.Fragment.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_favourites"
+        android:name="com.vladimir.gamesapp.Fragment.favourites.FavouritesFragment"
+        android:label="@string/favourites" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.vladimir.gamesapp.Fragment.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_search"
+        android:name="com.vladimir.gamesapp.Fragment.searchGames.SearchGamesFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.vladimir.gamesapp.Fragment.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_played"
+        android:name="com.vladimir.gamesapp.Fragment.played.PlayedFragment"
+        android:label="@string/played"
+        tools:layout="@layout/fragment_played" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.vladimir.gamesapp.Fragment.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_toPlay"
+        android:name="com.vladimir.gamesapp.Fragment.toPlay.ToPlayFragment"
+        android:label="@string/toPlay"
+        tools:layout="@layout/fragment_to_play" />
 
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.vladimir.gamesapp.Fragment.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.vladimir.gamesapp.Fragment.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>

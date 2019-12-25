@@ -16,15 +16,28 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.vladimir.gamesapp.Api.ApiConst;
+import com.vladimir.gamesapp.Api.BaseApi;
+import com.vladimir.gamesapp.Api.Model.GameModel;
 import com.vladimir.gamesapp.R;
 import com.vladimir.gamesapp.Utils.FlowController;
+import com.vladimir.gamesapp.Utils.SharedPreferencesUtils;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.view.Menu;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -42,13 +55,15 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_favourites, R.id.nav_search, R.id.nav_played,R.id.nav_toPlay)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        setupNavigationHeader(navigationView);
+
     }
 
     @Override
@@ -74,4 +89,14 @@ public class HomeActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void setupNavigationHeader(NavigationView navigationView) {
+        View hView =  navigationView.getHeaderView(0);
+        TextView name = (TextView)hView.findViewById(R.id.name_tv);
+        TextView email = (TextView)hView.findViewById(R.id.email_tv);
+
+        name.setText(SharedPreferencesUtils.getUser(this).getFirst_name()+" "+SharedPreferencesUtils.getUser(this).getLast_name());
+        email.setText(SharedPreferencesUtils.getUser(this).getEmail());
+    }
+
 }

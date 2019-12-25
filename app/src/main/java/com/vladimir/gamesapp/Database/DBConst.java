@@ -19,12 +19,13 @@ public class DBConst {
 
     //Game constants
 
-    static final String GAME_TABLE_NAME = "user";
+    static final String GAME_TABLE_NAME = "game";
     static final String GAME_COLUMN_ID = "id";
+    static final String GAME_COLUMN_GAME_ID = "game_id";
     static final String GAME_COLUMN_NAME = "name";
     static final String GAME_COLUMN_STORYLINE = "storyline";
     static final String GAME_COLUMN_SUMMARY = "summary";
     static final String GAME_COLUMN_URL = "url";
-    static final String GAME_COLUMN_SCREENSHOTS = "screenshots";
+    static final String GAME_COLUMN_TYPE = "type";
 
 }
