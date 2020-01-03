@@ -38,6 +38,7 @@ public class DBGame {
         values.put(DBConst.GAME_COLUMN_URL, gameModel.getUrl());
         values.put(DBConst.GAME_COLUMN_TYPE, selection.name());
         values.put(DBConst.GAME_COLUMN_GAME_ID, gameModel.getGame_id());
+        values.put(DBConst.GAME_COLUMN_USER_ID, SharedPreferencesUtils.getUser(context).getId());
 
         long result = db.insert(DBConst.GAME_TABLE_NAME,null,values);
 
@@ -100,8 +101,8 @@ public class DBGame {
         };
 
         // Filter results WHERE
-        String selection = DBConst.GAME_COLUMN_TYPE + " = ?";
-        String[] selectionArgs = { gameSelection.name() };
+        String selection = DBConst.GAME_COLUMN_TYPE + " = ? and " + DBConst.GAME_COLUMN_USER_ID + " = ? ";
+        String[] selectionArgs = { gameSelection.name(), String.valueOf(SharedPreferencesUtils.getUser(context).getId()) };
 
         // How you want the results sorted in the resulting Cursor
         String sortOrder =

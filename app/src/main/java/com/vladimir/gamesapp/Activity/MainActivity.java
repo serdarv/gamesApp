@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private LoginUserModel loginUserModel;
     private DBUser userDB;
 
-    //DB initialization
+    //Lifecycle
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +77,5 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.not_registered_tv) void register() {
         FlowController.showRegister(this,RegistrationActivity.class);
     }
-
-    //TODO - implement fragments,SQLite database,registration
 
 }

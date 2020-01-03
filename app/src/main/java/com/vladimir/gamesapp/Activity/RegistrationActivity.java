@@ -19,6 +19,8 @@ import java.util.regex.Pattern;
 
 public class RegistrationActivity extends AppCompatActivity {
 
+    //Bind views
+
     @BindView(R.id.email_et)
     EditText email;
     @BindView(R.id.first_name_et)
@@ -32,6 +34,8 @@ public class RegistrationActivity extends AppCompatActivity {
     @BindView(R.id.repeat_password_et)
     EditText repeat_password;
 
+    //Lifecycle
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
     }
+
+    //ButterKnife OnClick bindings
 
     @OnClick(R.id.register_btn) void register() {
         if(email.getText().toString().isEmpty()) {
@@ -76,6 +82,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         }
     }
+
+    //Private methods
 
     private boolean isValidEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;

@@ -9,7 +9,6 @@ import butterknife.OnClick;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +21,6 @@ import com.vladimir.gamesapp.Api.Model.GameCoverModel;
 import com.vladimir.gamesapp.Api.Model.GameModel;
 import com.vladimir.gamesapp.Database.DBGame;
 import com.vladimir.gamesapp.Enums.UserGameSelection;
-import com.vladimir.gamesapp.Model.UserModel;
 import com.vladimir.gamesapp.R;
 import com.vladimir.gamesapp.Utils.FlowController;
 
@@ -30,8 +28,12 @@ import java.util.ArrayList;
 
 public class GameDetailActivity extends AppCompatActivity {
 
-    GameModel game = new GameModel();
-    DBGame dbGame;
+    //Private variables
+
+    private GameModel game = new GameModel();
+    private DBGame dbGame;
+
+    //Lifecycle
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,8 @@ public class GameDetailActivity extends AppCompatActivity {
         finish();
         return true;
     }
+
+    //ButterKnife OnClick bindings
 
     @OnClick(R.id.favourites_btn) void addFav() {
         if (dbGame.saveGame(game, UserGameSelection.FAVOURITE) > 1)

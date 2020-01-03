@@ -46,6 +46,7 @@ public class DBInit extends SQLiteOpenHelper {
                     DBConst.GAME_COLUMN_SUMMARY + " TEXT," +
                     DBConst.GAME_COLUMN_TYPE + " TEXT," +
                     DBConst.GAME_COLUMN_GAME_ID + " TEXT," +
+                    DBConst.GAME_COLUMN_USER_ID + " INTEGER," +
                     DBConst.GAME_COLUMN_URL + " TEXT)";
 
     private static final String SQL_DELETE_ENTRIES =

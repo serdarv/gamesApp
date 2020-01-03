@@ -21,6 +21,7 @@ public class DBConst {
 
     static final String GAME_TABLE_NAME = "game";
     static final String GAME_COLUMN_ID = "id";
+    static final String GAME_COLUMN_USER_ID = "user_id";
     static final String GAME_COLUMN_GAME_ID = "game_id";
     static final String GAME_COLUMN_NAME = "name";
     static final String GAME_COLUMN_STORYLINE = "storyline";

@@ -2,10 +2,6 @@ package com.vladimir.gamesapp.Activity;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -16,12 +12,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.vladimir.gamesapp.Api.ApiConst;
-import com.vladimir.gamesapp.Api.BaseApi;
-import com.vladimir.gamesapp.Api.Model.GameModel;
 import com.vladimir.gamesapp.R;
 import com.vladimir.gamesapp.Utils.FlowController;
 import com.vladimir.gamesapp.Utils.SharedPreferencesUtils;
@@ -30,19 +20,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 import android.view.Menu;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class HomeActivity extends AppCompatActivity {
+
+    // Private variables
 
     private AppBarConfiguration mAppBarConfiguration;
     private DrawerLayout drawer;
+
+    //Lifecycle
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
